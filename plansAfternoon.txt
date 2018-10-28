@@ -1,0 +1,9 @@
+1. functional flip
+2. check values for matches
+3. if not match re-apply hidden
+4. if match stay flipped (visibility: visible)
+5. track if all matches are made
+7. extras...
+  -reset game option after win
+  -search bar, change query option
+  -lives system, lose condition

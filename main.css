@@ -1,0 +1,73 @@
+body{
+  height:100vh;
+  background-color: fuchsia;
+}
+
+.grid {
+  height: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.box {
+  background-image: darkkhaki;
+  height: 200px;
+  width: 200px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: black;
+  border-radius: 10px;
+}
+
+img{
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.show{
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** Loading Spinner Styles ****/
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
