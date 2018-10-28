@@ -7,3 +7,4 @@
   -reset game option after win
   -search bar, change query option
   -lives system, lose condition
+
