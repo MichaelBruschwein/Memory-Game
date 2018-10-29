@@ -1,6 +1,6 @@
 body{
   height:100vh;
-  background-color: fuchsia;
+  background-color: aqua;
 }
 
 .grid {
@@ -12,7 +12,8 @@ body{
 }
 
 .box {
-  background-image: darkkhaki;
+  background-image: url("https://static.appvn.com/a/uploads/thumbnails/112015/mr-square_icon.png");
+  background-size: 200px;
   height: 200px;
   width: 200px;
   border-style: solid;

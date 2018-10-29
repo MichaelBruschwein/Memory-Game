@@ -65,12 +65,11 @@ const imageDisplay = function(e) {
 }
 const publicKey = "09714c36f109af79663ce09d4dbb60d7fff7368af77c062e423e0f58fa46b9e7";
 let userInput = "";
-document.getElementById("searchbar").addEventListener("input",(e)=>{
+document.getElementById("searchbar").addEventListener("input",(e)=>{ // logs user input form text field. 
   userInput = e.target.value
-  console.log(userInput)
 })
 
-document.getElementById("searchButton").addEventListener("click",function(){
+document.getElementById("searchButton").addEventListener("click",function(){ //Checks to make sure user at leasts inputs more than nothing
   if (userInput === ""){
     alert("You Must Input Text Before Searching...")
     return;
