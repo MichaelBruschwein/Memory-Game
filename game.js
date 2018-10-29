@@ -7,6 +7,7 @@ let pic1
 let pic2
 let numOfMatches = 0;
 const matchTotal = 10;
+let url = ""
 
 const wonGameAlert = function(){ // checks to see if all matches are complete if so alerts user telling them they have won the game
   setTimeout(()=>{
@@ -63,8 +64,20 @@ const imageDisplay = function(e) {
   }
 }
 const publicKey = "09714c36f109af79663ce09d4dbb60d7fff7368af77c062e423e0f58fa46b9e7";
+let userInput = "";
+document.getElementById("searchbar").addEventListener("input",(e)=>{
+  userInput = e.target.value
+  console.log(userInput)
+})
 
-const url = `https://api.unsplash.com/search/photos/?query=mark`;//generates photos based on search
+document.getElementById("searchButton").addEventListener("click",function(){
+  if (userInput === ""){
+    alert("You Must Input Text Before Searching...")
+    return;
+  }
+  url = `https://api.unsplash.com/search/photos/?query=${userInput}`;//generates photos based on search
+  gameBoard(numberOfBoxess)
+})
 
 // const imgDivs = document.querySelectorAll(".box")
 const grabImagesFromApi = function(){
@@ -106,14 +119,13 @@ const gameBoard = function(value){ //creates the amount of squares based on orig
     let div = document.createElement("div")
     div.classList.add("box")
     let id = document.createAttribute("id")
-    id.value = "1"
+    id.value = `${i+1}`
     div.setAttributeNode(id)
     const findGridElement = document.getElementById("img")
     findGridElement.appendChild(div)
   }
   grabImagesFromApi()
 }
-gameBoard(numberOfBoxess)
 
 
 
