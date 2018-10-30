@@ -1,8 +1,8 @@
 //GAME FILE\
-let card1Flipped = ""
-let card2Flipped = ""
+// let card1Flipped = ""
+// let card2Flipped = ""
+let cardsFlipped = []
 let lastSelecetedDiv = ""
-let numberOfFlips = 0;
 let pic1
 let pic2
 let numOfMatches = 0;
@@ -19,20 +19,16 @@ const wonGameAlert = function(){ // checks to see if all matches are complete if
   },1000)
 }
 const matchChecker = function(matches){
-  if(card1Flipped === card2Flipped){ //Checks to see if first selected card is the same as second selected card
+  if(cardsFlipped[0] === cardsFlipped[1]){ //Checks to see if first selected card is the same as second selected card
     numOfMatches = numOfMatches + 1;
-    numberOfFlips = 0;
-    card1Flipped = ""
-    card2Flipped = ""
+    cardsFlipped = [];
     wonGameAlert()
     return;
   }else{ //If first card selected isn't equal to card 2 resets card 
     setTimeout(()=>{
       pic1.classList.remove("show");
       pic2.classList.remove("show");
-      card1Flipped = ""
-      card2Flipped = ""
-      numberOfFlips = 0;
+      cardsFlipped = [];
     },2000)
   }
 }
@@ -46,21 +42,19 @@ const imageDisplay = function(e) {
     return;
   }
   const findImage = e.target.firstChild
-  if(numberOfFlips === 2 || sameCardClicked(e)){//handles fast clicking
+  if(cardsFlipped.length === 2 || sameCardClicked(e)){//handles fast clicking
     return;
   }
-  if(!card1Flipped.length) { // checks to see if a card is fliped if not assigns card image value then stores that value into variable
-    numberOfFlips = numberOfFlips + 1;
+  if(cardsFlipped.length === 0) { // checks to see if a card is fliped if not assigns card image value then stores that value into variable
     pic1 = findImage
     findImage.classList.add("show");
-    card1Flipped = findImage.getAttribute("src")
+    cardsFlipped.push(findImage.getAttribute("src"))
     return;
   }
-  if(!card2Flipped.length){ // checks to see if a card is fliped if not assigns card image value then stores that value into variable
-    numberOfFlips = numberOfFlips + 1;
+  if(cardsFlipped.length === 1){ // checks to see if a card is fliped if not assigns card image value then stores that value into variable
     pic2 = findImage
     findImage.classList.add("show");
-    card2Flipped = findImage.getAttribute("src")
+    cardsFlipped.push(findImage.getAttribute("src"))
     matchChecker()
     return;
   }
