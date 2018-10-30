@@ -12,6 +12,8 @@ let url = ""
 const wonGameAlert = function(){ // checks to see if all matches are complete if so alerts user telling them they have won the game
   setTimeout(()=>{
     if(numOfMatches === matchTotal){
+      document.getElementById("music").pause()
+      document.getElementById("winSound").play()
       alert("You have won the game congrats man :D")
     }
   },1000)
@@ -124,6 +126,13 @@ const gameBoard = function(value){ //creates the amount of squares based on orig
     findGridElement.appendChild(div)
   }
   grabImagesFromApi()
+  document.getElementById("music").play()
+}
+const resetGame = function(){
+   boxes = document.querySelectorAll(".box")
+   boxes.forEach(function(){
+
+   })
 }
 
 
